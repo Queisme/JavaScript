@@ -10,3 +10,28 @@ const quotes = [
   "Many of life's failures are people who did not realize how close they were to success when they gave up.",
   'If you want to live a happy life, tie it to a goal, not to people or things.',
 ];
+
+// const generateQuote = () => {
+//   words = quotes[Math.floor(Math.random() * quotes.length)];
+//   console.log(words);
+// };
+
+const usedIndexs = new Set();
+const quoteElement = document.getElementById('quote');
+
+const generateQuote = () => {
+  if (usedIndexs.size >= quotes.length) {
+    usedIndexs.clear();
+  }
+  while (true) {
+    const listOfQuotes = quotes[Math.floor(Math.random() * quotes.length)];
+
+    if (usedIndexs.has(listOfQuotes)) continue;
+
+    quoteElement.innerHTML = listOfQuotes;
+    usedIndexs.add(listOfQuotes);
+    break;
+  }
+};
+
+//Sets use size, Arrays use length
