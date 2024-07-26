@@ -19,6 +19,8 @@
 
 //sumAll
 
-const sumAll = () => {};
+const sumAll = (min, max) => {
+  return ((max - min + 1) * (min + max)) / 2;
+};
 
 console.log(sumAll(1, 4)); //1 + 2 + 3 + 4 //10
