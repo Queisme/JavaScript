@@ -19,8 +19,16 @@
 
 //sumAll
 
-const sumAll = (min, max) => {
-  return ((max - min + 1) * (min + max)) / 2;
-};
+// const sumAll = (min, max) => {
+//   return ((max - min + 1) * (min + max)) / 2;
+// };
 
-console.log(sumAll(1, 4)); //1 + 2 + 3 + 4 //10
+// console.log(sumAll(1, 4)); //1 + 2 + 3 + 4 //10
+
+//Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string is should return 'Error'
+
+// function problem(x) {
+//   return !isNaN(x) ? x * 50 + 6 : 'Error';
+// }
+
+// console.log(problem(''));
