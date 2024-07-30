@@ -33,13 +33,76 @@
 
 // console.log(problem(''));
 
-const leapYears = (year) => {
-  if (year % 4 === 0) return 'true';
-  if (year % 100 === 0 && year % 400 === 0) return 'true';
-  else return 'false';
+// const leapYears = (year) => {
+//   return new Date(year, 1, 29).getMonth() === 1;
+// };
+
+// const leapYears2 = (year) =>
+//   (0 === year % 4 && 0 !== year % 100) || 0 === year % 400 ? true : false;
+
+// console.log(leapYears(1897));
+// console.log(leapYears2(2004));
+
+//Write two functions that convert temperatures from Fahrenheit to Celsius, and vice versa rounded to one decimal place:
+
+//Celsius to Fahrenheit = (0°C × 9/5) + 32 = 32°F
+
+//Fahrenheit to Celsius = (32°F − 32) × 5/9 = 0°C
+
+//npm test tempConversion.spec.js
+
+// const convertToCelsius = (fahToCel) => {
+//   return (((fahToCel - 32) * 5) / 9).toFixed(1);
+// };
+
+// const convertToFahrenheit = (celToFah) => {
+//   return ((celToFah * 9) / 5 + 32).toFixed(1);
+// };
+// console.log(convertToCelsius(103));
+// console.log(convertToFahrenheit(13));
+
+//Implement a function that takes 2 positive integers and returns the sum of every integer between (and including) them:
+
+//sumAll(1, 4); // returns the sum of 1 + 2 + 3 + 4 which is 10
+
+// const sumAll = (a, b) => {
+//   let min = Math.min(a, b);
+//   let max = Math.max(a, b);
+//   let mathy = ((max - min + 1) * (min + max)) / 2;
+//   let nope = 'ERROR';
+//   let answer = '';
+//   Number.isInteger(a) && Number.isInteger(b)
+//     ? answer === mathy
+//     : answer === nope;
+//   !Number.isNaN(a) && !Number.isNaN(b) ? answer === mathy : answer === nope;
+//   if (a < 0 || b < 0) answer === nope;
+//   return answer;
+// };
+
+const sumAll = function (min, max) {
+  if (!Number.isInteger(min) || !Number.isInteger(max)) return 'ERROR';
+  if (min < 0 || max < 0) return 'ERROR';
+  if (min > max) {
+    const temp = min;
+    min = max;
+    max = temp;
+  }
+  let sum = 0;
+  for (let i = min; i <= max; i++) {
+    sum += i;
+  }
+  return sum;
 };
 
-console.log(leapYears(1900));
+// const sumAll = (a, b) => {
+//   let min = Math.min(a, b);
+//   let max = Math.max(a, b);
+//   if (!Number.isInteger(min) || !Number.isInteger(max)) return 'ERROR';
+//   if (min < 0 || max < 0) {
+//     return 'ERROR';
+//   } else ((max - min + 1) * (min + max)) / 2;
+// };
 
+console.log(sumAll(4, 1));
 
-doopie doopie doo
+//npm test sumAll.spec.js
